@@ -1,0 +1,69 @@
+:root {
+  /* Chrome / shell */
+  --chrome-highlight: #f4f5f7;
+  --chrome-light: #d7dade;
+  --chrome-mid: #aeb2b8;
+  --chrome-dark: #83878d;
+  --chrome-shadow: #5b5e63;
+  --chrome-edge: #45474b;
+
+  /* Screen bezel */
+  --bezel-glass-top: rgba(255, 255, 255, 0.35);
+  --bezel-glass-bottom: rgba(255, 255, 255, 0.02);
+  --screen-bg: #e4e7ea;
+  --screen-bg-alt: #eef0f2;
+
+  /* LCD content */
+  --lcd-text-primary: #16181b;
+  --lcd-text-secondary: #5a5f66;
+  --lcd-text-muted: #8b9096;
+  --lcd-divider: #c7cbd0;
+  --lcd-select-bg: linear-gradient(180deg, #3f7fe0 0%, #1c4fbd 100%);
+  --lcd-select-text: #ffffff;
+
+  /* Buttons / controls deck */
+  --deck-bg: #16181c;
+  --deck-bg-alt: #1e2126;
+  --btn-idle: #26292f;
+  --btn-highlight: #34383f;
+  --btn-icon: #cfd3d8;
+  --btn-icon-dim: #6c7076;
+
+  /* Wheel */
+  --wheel-outer-top: #f7f8f9;
+  --wheel-outer-bottom: #c7cbd0;
+  --wheel-inner-shadow: rgba(0, 0, 0, 0.25);
+
+  /* Accent (kept for focus states, not the reference's core palette) */
+  --accent: #1c4fbd;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+}
+
+button {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

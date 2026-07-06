@@ -1,0 +1,50 @@
+.login-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.login-screen__mark {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--lcd-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.login-screen__hint {
+  font-size: 12px;
+  color: var(--lcd-text-secondary);
+  line-height: 1.4;
+  max-width: 220px;
+  margin: 0;
+}
+
+.login-screen__btn {
+  margin-top: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(180deg, #3f7fe0, #1c4fbd);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-screen__btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.login-screen__error {
+  font-size: 11px;
+  color: #c0392b;
+  max-width: 220px;
+  margin: 4px 0 0;
+}

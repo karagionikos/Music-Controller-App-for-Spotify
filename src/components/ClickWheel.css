@@ -1,0 +1,126 @@
+.click-wheel-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px auto 15px;
+}
+
+.click-wheel-cluster__satellite {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, var(--wheel-outer-top), var(--wheel-outer-bottom) 75%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 -1px 3px rgba(0, 0, 0, 0.2) inset,
+    0 2px 5px rgba(0, 0, 0, 0.25);
+  color: var(--chrome-shadow);
+}
+
+.click-wheel-cluster__satellite svg {
+  width: 15px;
+  height: 15px;
+}
+
+.click-wheel-cluster__satellite.is-active {
+  color: #1c4fbd;
+}
+
+.click-wheel {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--wheel-outer-top), var(--wheel-outer-bottom) 70%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 -2px 5px rgba(0, 0, 0, 0.25) inset,
+    0 6px 14px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  touch-action: none;
+  flex-shrink: 0;
+}
+
+.click-wheel.is-dragging {
+  cursor: grabbing;
+}
+
+.click-wheel__btn {
+  position: absolute;
+  border: none;
+  background: transparent;
+  color: var(--chrome-shadow);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.click-wheel__btn--menu.is-longpressing {
+  color: #1c4fbd;
+  opacity: 0.6;
+}
+
+.click-wheel__btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.click-wheel__btn--menu {
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.click-wheel__btn--prev {
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.click-wheel__btn--next {
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.click-wheel__btn--play {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.click-wheel__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 40% 35%, #f2f3f5, #c9cdd2 75%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 -3px 6px rgba(0, 0, 0, 0.2) inset,
+    0 2px 4px rgba(0, 0, 0, 0.35);
+  border: none;
+  cursor: pointer;
+}
+
+.click-wheel__center:active {
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.3) inset,
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}

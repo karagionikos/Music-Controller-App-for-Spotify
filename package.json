@@ -1,0 +1,51 @@
+{
+  "name": "retro-music-player",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"npm:electron:dev\"",
+    "electron:dev": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 npm run electron:start",
+    "electron:build": "tsc -p electron/tsconfig.json && node scripts/fix-electron-ext.mjs",
+    "electron:start": "npm run electron:build && electron .",
+    "build": "tsc -b && vite build && npm run electron:build",
+    "dist": "npm run build && electron-builder",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "concurrently": "^10.0.3",
+    "cross-env": "^10.1.0",
+    "electron": "^42.5.0",
+    "electron-builder": "^26.15.3",
+    "oxlint": "^1.71.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "wait-on": "^9.0.10"
+  },
+  "build": {
+    "appId": "com.retromusicplayer.app",
+    "productName": "Retro Music Player",
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": { "target": "dmg" },
+    "win": { "target": "nsis" },
+    "linux": { "target": "AppImage" }
+  }
+}
